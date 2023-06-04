@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -34,7 +35,10 @@ public class UserService {
                 .orElse(null);
     }
 
-
-
-
+    public void addUser(UserDto userDto) {
+        log.info("Adding user");
+        userDto.setUserId(UUID.randomUUID().toString());
+        User user = userMapper.getUserEntity(userDto);
+        userRepository.save(user);
+    }
 }

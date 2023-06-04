@@ -1,10 +1,11 @@
 package com.kanban.kanban.dto;
 
+import com.kanban.kanban.common.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import lombok.NonNull;
 
 @Data
 @Builder
@@ -12,7 +13,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserDto {
     private String userId;
+    @NonNull
     private String userName;
+    @NonNull
     private String passWord;
-    private String role;
+    @NonNull
+    private Role role;
 }

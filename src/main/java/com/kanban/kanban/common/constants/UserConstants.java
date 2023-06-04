@@ -6,5 +6,6 @@ public class UserConstants {
 
         public static final String GET_USERS = "/users";
         public static final String GET_USER = "/users/{id}";
+        public static final String ADD_USER = "/users";
     }
 }

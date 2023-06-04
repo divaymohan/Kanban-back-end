@@ -24,5 +24,10 @@ public class UserController {
         return userService.getUser(userId);
     }
 
+    @PostMapping(path = UserConstants.EndPoints.ADD_USER)
+    public void addUser(@RequestBody UserDto userDto){
+        userService.addUser(userDto);
+    }
+
 
 }
