@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
+
+import javax.validation.constraints.NotBlank;
 
 @Data
 @Builder
@@ -13,10 +14,10 @@ import lombok.NonNull;
 @AllArgsConstructor
 public class UserDto {
     private String userId;
-    @NonNull
+    @NotBlank(message = "User name is required")
     private String userName;
-    @NonNull
+    @NotBlank(message = "Password is required")
     private String passWord;
-    @NonNull
+    @NotBlank(message = "Role is required")
     private Role role;
 }
